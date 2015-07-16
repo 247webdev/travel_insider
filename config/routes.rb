@@ -8,6 +8,12 @@ devise_for :users, controllers: { sessions: "users/sessions", registrations: "us
 
   root 'home#index'
 
+  get 'destinations/:id' => 'destination#view'
+
+  get 'places/:id' => 'place#view'
+
+  get 'reviews/:id' => 'review#view'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -28,6 +28,8 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.3'
 # for web app icons
 gem 'font-awesome-rails'
+# suggested by Heroku
+gem 'rails_12factor'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

@@ -45,15 +45,33 @@ div {
   }
 }
 
+#menu {
+  font-size: 48px;
+  color: #B1B1B1;
+  position: relative;
+  top: -3px;
+}
+
 #notice {
   color: green;
 }
 
 #logo {
-  background-color: #41A151
-//  width: 25px;
-//  height: 25px;
-//  border-radius: 50%;
+  background-color: #41A151;
+  display: inline-block;
+  margin-left: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+h1 {
+  display: inline-block;
+  color: #41A151;
+  font-size: 20px;
+  position: relative;
+  top: -10px;
+  left: 4px;
 }
 
 .field_with_errors {

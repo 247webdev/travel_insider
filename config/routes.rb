@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :destinations
 devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
 
-
   root 'home#index'
 
   get 'destination/:id' => 'destinations#show'

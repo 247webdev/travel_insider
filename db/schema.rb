@@ -55,6 +55,13 @@ ActiveRecord::Schema.define(version: 20150716184712) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "image"
+    t.string   "location"
+    t.string   "oauth_token"
+    t.time     "oauth_expires_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

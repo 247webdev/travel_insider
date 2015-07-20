@@ -26,6 +26,12 @@ gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'therubyracer'
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
+gem "figaro"
+gem "koala", "~> 2.0"
+
 # for web app icons
 gem 'font-awesome-rails'
 # suggested by Heroku

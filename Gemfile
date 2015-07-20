@@ -32,6 +32,10 @@ gem 'omniauth-facebook', '1.4.0'
 gem "figaro"
 gem "koala", "~> 2.0"
 
+# for web app icons
+gem 'font-awesome-rails'
+# suggested by Heroku
+gem 'rails_12factor'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

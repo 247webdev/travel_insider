@@ -1,0 +1,201 @@
+/* Header */
+
+/* Text style for "Post a review" */
+.post-a-review {
+  width: 440px;
+  height: 53px;
+  color: white;
+  font-family: Muli;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 53px;
+}
+
+/* Style for "Post button" */
+.post-button {
+  width: 440px;
+  height: 70px;
+  background-color: #50d2c2;
+}
+
+/* Style for "Menu icon" */
+.menu-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #cbcbcb;
+}
+
+/* Style for "Header bg" */
+.header-bg {
+  width: 640px;
+  height: 88px;
+  background-color: white;
+  box-shadow: 0 4px 0 #c3c8cd;
+}
+
+/* Content */
+
+/* Text style for "Post your review title" */
+.post-your-review-title {
+  width: 560px;
+  height: 44px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 44px;
+}
+
+/* Text style for "Place name" */
+.place-name {
+  width: 560px;
+  height: 35px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+/* Style for "Place bg" */
+.place-bg {
+  width: 560px;
+  height: 60px;
+  background-color: white;
+}
+
+/* Text style for "Place address" */
+.place-address {
+  width: 560px;
+  height: 35px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+/* Style for "Address bg" */
+.address-bg {
+  width: 560px;
+  height: 60px;
+  background-color: white;
+}
+
+/* Text style for "Tag" */
+.tag {
+  width: 70px;
+  height: 35px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+/* Text style for "Tag name" */
+.Tag-name {
+  width: 110px;
+  height: 35px;
+  color: white;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 35px;
+}
+
+/* Style for "Tag bg" */
+.tag-bg {
+  width: 110px;
+  height: 35px;
+  background-color: #50d2c2;
+}
+
+/* Text style for "Rating" */
+.rating {
+  width: 144px;
+  height: 35px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+/* Style for "Star" */
+.star {
+  width: 36px;
+  height: 36px;
+  background-color: #d8d8d8;
+  border: 1px solid #979797;
+}
+
+/* Color for Star selected: #F8E71C */
+
+/* Text style for "Your review:" */
+.your-review {
+  width: 144px;
+  height: 35px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+/* Text style for "Write your review" */
+.write-your-review {
+  width: 560px;
+  height: 35px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+/* Style for "Review bg" */
+.review-bg {
+  width: 560px;
+  height: 400px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+/* Text style for "Post your review now" */
+.post-your-review-now {
+  width: 560px;
+  height: 53px;
+  color: white;
+  font-family: Muli;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 53px;
+}
+
+/* Style for "Post now bg" */
+.post-now-bg {
+  width: 560px;
+  height: 70px;
+  background-color: #50d2c2;
+}
+
+/* Footer */
+
+/* Text style for "Footer info" */
+.footer-info {
+  width: 560px;
+  height: 36px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 35px;
+}
+
+/* Style for "Footer bg" */
+.footer-bg {
+  width: 640px;
+  height: 89px;
+  background-color: #b1b1b1;
+}

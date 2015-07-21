@@ -1,0 +1,167 @@
+/* Header */
+
+/* Text style for "Name" */
+.Name {
+  width: 440px;
+  height: 53px;
+  color: #50e3c2;
+  font-family: Muli;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 53px;
+}
+
+/* Style for "Logo" */
+.Logo {
+  width: 68px;
+  height: 68px;
+  background-color: #50d2c2;
+}
+
+/* Style for "Header bg" */
+.header-bg {
+  width: 640px;
+  height: 88px;
+  background-color: white;
+  box-shadow: 0 4px 0 #c3c8cd;
+}
+
+/* Content */
+
+/* Text style for "Headline" */
+.headline {
+  width: 560px;
+  height: 142px;
+  color: white;
+  font-family: Muli;
+  font-size: 48px;
+  font-weight: 200;
+  line-height: 71px;
+}
+
+/* Style for "Headline bg" */
+.headline-bg {
+  width: 560px;
+  height: 161px;
+  background-color: rgba(74, 73, 74, 0.5);
+}
+
+/* Text style for "Log in" */
+.log-in {
+  width: 309px;
+  height: 43px;
+  color: white;
+  font-family: "Source Sans Pro";
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 43px;
+}
+
+/* Style for "F" */
+.f {
+  width: 34px;
+  height: 61px;
+  background-color: white;
+}
+
+/* Style for "login-bg" */
+.login-bg {
+  width: 560px;
+  height: 127px;
+  background-color: #507cc0;
+  border-radius: 8px;
+}
+
+/* Style for "Image overlay" */
+.image-overlay {
+  width: 640px;
+  height: 1142px;
+  opacity: 0.1;
+  background-color: #b574f5;
+}
+
+/* Style for "img" */
+.img {
+  width: 640px;
+  height: 1147px;
+  opacity: 0.5;
+}
+
+/* Style for "Image mask" */
+.image-mask {
+  width: 640px;
+  height: 1463px;
+  background-color: black;
+}
+
+/* Text style for "About us" */
+.about-us {
+  width: 560px;
+  height: 35px;
+  color: white;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 35px;
+}
+
+/* Text style for "FAQ title" */
+.faq-title{
+  width: 560px;
+  height: 35px;
+  color: white;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+/* Text style for "FAQ" */
+.faq {
+  width: 560px;
+  height: 104px;
+  color: white;
+  font-family: Muli;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 26px;
+}
+
+/* Text style for "FAQ end" */
+.faq-end {
+  width: 560px;
+  height: 30px;
+  color: white;
+  font-family: Muli;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+/* Style for "FAQ bg" */
+.faq-bg {
+  width: 640px;
+  height: 637px;
+  background-color: #4a4a4a;
+  border-radius: 2px;
+}
+
+/* Footer */
+
+/* Text style for "Footer info" */
+.footer-info {
+  width: 560px;
+  height: 36px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 35px;
+}
+
+/* Style for "Rectangle 20" */
+.rectangle-20 {
+  width: 640px;
+  height: 89px;
+  background-color: #b1b1b1;
+}

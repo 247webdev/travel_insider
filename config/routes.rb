@@ -1,17 +1,19 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/:provider/callback', to: 'sessions#create', as: 'signup'
   get 'auth/failure', to: redirect('/')
   get '/users/sign_out', to: 'sessions#destroy', as: 'signout'
 # match '/auth/:provider/callback' => 'authentications#create'
 # devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
-devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } 
+resources :destinations do
+    resources :places do
+          resources :reviews, shallow: true
+    end
+end
 
-  resources :reviews
-  resources :places
-  resources :destinations
-devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
+#make a get route for all User.reviews
 
   # get 'destination/:id' => 'destinations#show'
   # get 'destination' => 'destinations#index'

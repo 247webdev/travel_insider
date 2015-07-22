@@ -1,0 +1,16 @@
+Welcome! <%= current_user.name %>
+
+<br>
+<img src=<%=current_user.image  %> alt="">
+
+<%= current_user.first_name %>
+<br>
+<% current_user.friends.each do |friend| %>
+<% user_friend = User.find_by_uid(friend["id"]) %>
+<h1><%= friend["name"] %></h1>
+<br>
+<img src=<%= user_friend.image %> alt="">
+
+<% end %>
+
+<!-- This page needs friends reviews and the current_user's reviews -->

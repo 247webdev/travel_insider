@@ -18,7 +18,7 @@
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="container1">
-        <div id="user_nav">
+        <div id="user_nav">>
           <% if current_user != nil %>
             Signed in as <strong><%= current_user.name %></strong>!
             <%= link_to "Sign out", signout_path, id: "sign_out" %>
@@ -29,7 +29,7 @@
         </ul>
     </ul>
     <div>
-      <%= link_to 'Home', root_path %>  | 
+      <%= link_to 'Home', root_path %>  |
       <%= link_to 'New Review', new_review_path %> |
       <%= link_to 'My Reviews', review_path(1) %>  |
       <%= link_to 'New Destination', new_destination_path %> |

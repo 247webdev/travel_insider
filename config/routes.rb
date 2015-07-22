@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+# <<<<<<< HEAD
+# root 'home#index'
+# get '/auth/:provider/callback' => 'authentications#create'
+# resources :authentications
+
+#   # get 'auth/:provider/callback', to: 'sessions#create'
+# get 'auth/failure', to: redirect('/')
+# devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations", omniauth_callbacks: "users/omniauth_callbacks" }
+# devise_scope :user do
+#   get 'signout', :to => 'devise/sessions#destroy'
+# end
+# resources :users
+# resources :reviews
+# resources :places
+# resources :destinations
+
+
+
+# =======
   root 'home#index'
 
   get 'auth/:provider/callback', to: 'sessions#create', as: 'signup'
@@ -6,7 +25,7 @@ Rails.application.routes.draw do
   get '/users/sign_out', to: 'sessions#destroy', as: 'signout'
 # match '/auth/:provider/callback' => 'authentications#create'
 # devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
-devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } 
+devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 resources :destinations do
     resources :places do
           resources :reviews, shallow: true
@@ -14,7 +33,6 @@ resources :destinations do
 end
 
   #make a new review. Added this since nested resources not giving this route otherwise AND Christine said destinations and place have to be selected first and I don't know how to do it otherwise the way the schema is
-  get 'new_review' => 'reviews#new'
 
 #make a get route for all User.reviews
 

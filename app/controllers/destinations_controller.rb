@@ -7,9 +7,12 @@ class DestinationsController < ApplicationController
     @destinations = Destination.all
   end
 
+  # this shows all reviews for a given destination
   # GET /destinations/1
   # GET /destinations/1.json
   def show
+    @destination = Destination.where( destination: "some destination") #  replace with the user's given search of destination
+    @reviews = @destination.reviews
   end
 
   # GET /destinations/new

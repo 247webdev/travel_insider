@@ -3,7 +3,7 @@ class CreateReviews < ActiveRecord::Migration
     create_table :reviews do |t|
       t.integer :stars
       t.string :text
-
+      
       t.timestamps null: false
     end
   end

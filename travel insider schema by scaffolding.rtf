@@ -1,0 +1,116 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fnil\fcharset0 Consolas;\f1\fnil\fcharset0 Consolas-Bold;\f2\fswiss\fcharset0 Helvetica;
+}
+{\colortbl;\red255\green255\blue255;}
+{\info
+{\author Christian Chandler}
+{\*\copyright all rights reserved}}\margl1440\margr1440\vieww14140\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl340
+
+\f0\fs28 \cf0 rails generate scaffold Destination destination:string\
+\
+rails generate scaffold Place name:string address:string city:string state:string zip:string country:string photo:string tag:string\
+\pard\pardeftab720\sl340
+\cf0 \
+rails generate scaffold Review stars:integer text:string\
+\
+\
+\
+destination\
+	destination string\
+\
+place\
+	name, address, city (city is actually destination in the destinations model), state, zip, country, photo, tag\
+	(((controller)))	
+\f1\b validates_inclusion_of :tag, in: ['eat','drink','sleep','do']\
+
+\f0\b0 \
+review\
+	stars, text\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f2\fs78 \cf0 #footer\
+.placeTitle\
+.placeAddress\
+.placeTag\
+.userPhoto\
+.reviewText\
+-----------------\
+
+\i\fs56 Tweet references a table named tweets. Using the cap+singular in rails is how to get the table
+\i0\fs78 \
+
+\fs46 READ is\
+t = Tweet.find(3)\
+\
+user = User.find(session[id])\
+user.reviews   <== this should give me all the user's reviews\
+\
+destination = destination.where(destination: (((variable or the search form's destination params content)))\
+destination.reviews  <== this should give me all the reviews within this destination\
+\
+NEW is\
+t = Tweet.new\
+t.status = "some text"\
+t.save\
+--or alternate syntax--\
+t = Tweet.new(\
+	status = "some text"\
+	name = "some other text")\
+t.save\
+--or alternate syntax--\
+user = User.find(session[id])\
+t = Tweet.create(\
+	status: "some text",\
+	name: user)\
+\
+UPDATE is\
+t = Tweet.find(3)\
+t.status = "some new text"\
+t.save\
+--or alternate syntax--\
+t = Tweet.find(3)\
+t.attributes = \{\
+	status = "brains text"\
+	zombie_name: "ash" \}\
+t.save\
+\
+\
+DELETE is\
+t = Tweet.find(3)\
+t.destroy\
+-------------------\
+model names are singular lowercase\
+\
+when model has validate_presence_of :status\
+\
+if status is blank and on save then we get returned false so, check for false\
+t.errors.messages returns hash of the error(s)\
+to use it write... t.errors[:status][0]\
+\
+for rating use\
+validates_inclusion_of :stars, in: 1..5\
+-------------------\
+Tweet.where(zombie_name: "ash") \
+Tweet.order(:created_date) ((( or whatever the field is called)\
+Tweet.limit(10)\
+since I need both plus all reviews from a user's netword, then I do??...\
+Review.find(user_id).order(created_date:).limit(10)    or is it :created_date??\
+==========\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs26 \cf0   <div class="field rating">\
+    <%= f.label :rating %><br>\
+    <span class="starRating" id="star1">&#9734;</span><span class="starRating" id="star2">&#9734;</span><span class="starRating" id="star3">&#9734;</span><span class="starRating" id="star4">&#9734;</span><span class="starRating" id="star5">&#9734;</span>\
+    <%= f.number_field :stars %>\
+  </div>\
+  <div class="field">\
+    <%= f.label :text %><br>\
+    <%= f.text_field :text %>\
+  </div>\
+  <div class="actions">\
+    <%= f.submit %>\
+  </div>}

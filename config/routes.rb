@@ -1,30 +1,49 @@
 Rails.application.routes.draw do
-root 'home#index'
-get '/auth/:provider/callback' => 'authentications#create'
-resources :authentications
+# <<<<<<< HEAD
+# root 'home#index'
+# get '/auth/:provider/callback' => 'authentications#create'
+# resources :authentications
 
-  # get 'auth/:provider/callback', to: 'sessions#create'
-get 'auth/failure', to: redirect('/')
-devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations", omniauth_callbacks: "users/omniauth_callbacks" }
-devise_scope :user do
-  get 'signout', :to => 'devise/sessions#destroy'
+#   # get 'auth/:provider/callback', to: 'sessions#create'
+# get 'auth/failure', to: redirect('/')
+# devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations", omniauth_callbacks: "users/omniauth_callbacks" }
+# devise_scope :user do
+#   get 'signout', :to => 'devise/sessions#destroy'
+# end
+# resources :users
+# resources :reviews
+# resources :places
+# resources :destinations
+
+
+
+# =======
+  root 'home#index'
+
+  get 'auth/:provider/callback', to: 'sessions#create', as: 'signup'
+  get 'auth/failure', to: redirect('/')
+  get '/users/sign_out', to: 'sessions#destroy', as: 'signout'
+# match '/auth/:provider/callback' => 'authentications#create'
+# devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
+devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+resources :destinations do
+    resources :places do
+          resources :reviews, shallow: true
+    end
 end
-resources :users
-resources :reviews
-resources :places
-resources :destinations
 
+  #make a new review. Added this since nested resources not giving this route otherwise AND Christine said destinations and place have to be selected first and I don't know how to do it otherwise the way the schema is
 
+#make a get route for all User.reviews
 
+  # get 'destination/:id' => 'destinations#show'
+  # get 'destination' => 'destinations#index'
 
-  get 'destination/:id' => 'destinations#show'
-  get 'destination' => 'destinations#index'
+  # get 'place/:id' => 'places#show'
+  # get 'place' => 'places#index'
 
-  get 'place/:id' => 'places#show'
-  get 'place' => 'places#index'
-
-  get 'review/:id' => 'reviews#show'
-  get 'review' => 'reviews#index'
+  # get 'review/:id' => 'reviews#show'
+  # get 'review' => 'reviews#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -82,52 +101,49 @@ resources :destinations
   #   end
 end
 
-#                   Prefix Verb   URI Pattern                       Controller#Action
-#                  reviews GET    /reviews(.:format)                reviews#index
-#                          POST   /reviews(.:format)                reviews#create
-#               new_review GET    /reviews/new(.:format)            reviews#new
-#              edit_review GET    /reviews/:id/edit(.:format)       reviews#edit
-#                   review GET    /reviews/:id(.:format)            reviews#show
-#                          PATCH  /reviews/:id(.:format)            reviews#update
-#                          PUT    /reviews/:id(.:format)            reviews#update
-#                          DELETE /reviews/:id(.:format)            reviews#destroy
-#                   places GET    /places(.:format)                 places#index
-#                          POST   /places(.:format)                 places#create
-#                new_place GET    /places/new(.:format)             places#new
-#               edit_place GET    /places/:id/edit(.:format)        places#edit
-#                    place GET    /places/:id(.:format)             places#show
-#                          PATCH  /places/:id(.:format)             places#update
-#                          PUT    /places/:id(.:format)             places#update
-#                          DELETE /places/:id(.:format)             places#destroy
-#             destinations GET    /destinations(.:format)           destinations#index
-#                          POST   /destinations(.:format)           destinations#create
-#          new_destination GET    /destinations/new(.:format)       destinations#new
-#         edit_destination GET    /destinations/:id/edit(.:format)  destinations#edit
-#              destination GET    /destinations/:id(.:format)       destinations#show
-#                          PATCH  /destinations/:id(.:format)       destinations#update
-#                          PUT    /destinations/:id(.:format)       destinations#update
-#                          DELETE /destinations/:id(.:format)       destinations#destroy
-#         new_user_session GET    /users/sign_in(.:format)          users/sessions#new
-#             user_session POST   /users/sign_in(.:format)          users/sessions#create
-#     destroy_user_session DELETE /users/sign_out(.:format)         users/sessions#destroy
-#            user_password POST   /users/password(.:format)         devise/passwords#create
-#        new_user_password GET    /users/password/new(.:format)     devise/passwords#new
-#       edit_user_password GET    /users/password/edit(.:format)    devise/passwords#edit
-#                          PATCH  /users/password(.:format)         devise/passwords#update
-#                          PUT    /users/password(.:format)         devise/passwords#update
-# cancel_user_registration GET    /users/cancel(.:format)           users/registrations#cancel
-#        user_registration POST   /users(.:format)                  users/registrations#create
-#    new_user_registration GET    /users/sign_up(.:format)          users/registrations#new
-#   edit_user_registration GET    /users/edit(.:format)             users/registrations#edit
-#                          PATCH  /users(.:format)                  users/registrations#update
-#                          PUT    /users(.:format)                  users/registrations#update
-#                          DELETE /users(.:format)                  users/registrations#destroy
-#        user_confirmation POST   /users/confirmation(.:format)     devise/confirmations#create
-#    new_user_confirmation GET    /users/confirmation/new(.:format) devise/confirmations#new
-#                          GET    /users/confirmation(.:format)     devise/confirmations#show
-#                     root GET    /                                 home#index
-#                          GET    /destination/:id(.:format)        destination#view
-#                          GET    /place/:id(.:format)              place#view
-#                          GET    /places(.:format)                 place#view
-#                          GET    /review/:id(.:format)             review#view
-#                          GET    /reviews(.:format)                review#view
+#                       Prefix Verb     URI Pattern                                                          Controller#Action
+#                         root GET      /                                                                    home#index
+#                       signup GET      /auth/:provider/callback(.:format)                                   sessions#create
+#                 auth_failure GET      /auth/failure(.:format)                                              redirect(301, /)
+#                      signout GET      /users/sign_out(.:format)                                            sessions#destroy
+#             new_user_session GET      /users/sign_in(.:format)                                             devise/sessions#new
+#                 user_session POST     /users/sign_in(.:format)                                             devise/sessions#create
+#         destroy_user_session DELETE   /users/sign_out(.:format)                                            devise/sessions#destroy
+#      user_omniauth_authorize GET|POST /users/auth/:provider(.:format)                                      users/omniauth_callbacks#passthru {:provider=>/facebook/}
+#       user_omniauth_callback GET|POST /users/auth/:action/callback(.:format)                               users/omniauth_callbacks#:action
+#                user_password POST     /users/password(.:format)                                            devise/passwords#create
+#            new_user_password GET      /users/password/new(.:format)                                        devise/passwords#new
+#           edit_user_password GET      /users/password/edit(.:format)                                       devise/passwords#edit
+#                              PATCH    /users/password(.:format)                                            devise/passwords#update
+#                              PUT      /users/password(.:format)                                            devise/passwords#update
+#     cancel_user_registration GET      /users/cancel(.:format)                                              devise/registrations#cancel
+#            user_registration POST     /users(.:format)                                                     devise/registrations#create
+#        new_user_registration GET      /users/sign_up(.:format)                                             devise/registrations#new
+#       edit_user_registration GET      /users/edit(.:format)                                                devise/registrations#edit
+#                              PATCH    /users(.:format)                                                     devise/registrations#update
+#                              PUT      /users(.:format)                                                     devise/registrations#update
+#                              DELETE   /users(.:format)                                                     devise/registrations#destroy
+#    destination_place_reviews GET      /destinations/:destination_id/places/:place_id/reviews(.:format)     reviews#index
+#                              POST     /destinations/:destination_id/places/:place_id/reviews(.:format)     reviews#create
+# new_destination_place_review GET      /destinations/:destination_id/places/:place_id/reviews/new(.:format) reviews#new
+#                  edit_review GET      /reviews/:id/edit(.:format)                                          reviews#edit
+#                       review GET      /reviews/:id(.:format)                                               reviews#show
+#                              PATCH    /reviews/:id(.:format)                                               reviews#update
+#                              PUT      /reviews/:id(.:format)                                               reviews#update
+#                              DELETE   /reviews/:id(.:format)                                               reviews#destroy
+#           destination_places GET      /destinations/:destination_id/places(.:format)                       places#index
+#                              POST     /destinations/:destination_id/places(.:format)                       places#create
+#        new_destination_place GET      /destinations/:destination_id/places/new(.:format)                   places#new
+#       edit_destination_place GET      /destinations/:destination_id/places/:id/edit(.:format)              places#edit
+#            destination_place GET      /destinations/:destination_id/places/:id(.:format)                   places#show
+#                              PATCH    /destinations/:destination_id/places/:id(.:format)                   places#update
+#                              PUT      /destinations/:destination_id/places/:id(.:format)                   places#update
+#                              DELETE   /destinations/:destination_id/places/:id(.:format)                   places#destroy
+#                 destinations GET      /destinations(.:format)                                              destinations#index
+#                              POST     /destinations(.:format)                                              destinations#create
+#              new_destination GET      /destinations/new(.:format)                                          destinations#new
+#             edit_destination GET      /destinations/:id/edit(.:format)                                     destinations#edit
+#                  destination GET      /destinations/:id(.:format)                                          destinations#show
+#                              PATCH    /destinations/:id(.:format)                                          destinations#update
+#                              PUT      /destinations/:id(.:format)                                          destinations#update
+#                              DELETE   /destinations/:id(.:format)                                          destinations#destroy

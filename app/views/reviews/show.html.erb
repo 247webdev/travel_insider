@@ -1,14 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<div>
+  <strong>Name:</strong>
+  <%= @review.name %>
+</div>
+
+<div>
+  <strong>Address:</strong>
+  <%= @review.address %>
+  <%= @review.photo %>
+</div>
+
+<div>
   <strong>Stars:</strong>
   <%= @review.stars %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Text:</strong>
   <%= @review.text %>
-</p>
+</div>
 
 <%= link_to 'Edit', edit_review_path(@review) %> |
-<%= link_to 'Back', reviews_path %>

@@ -1,17 +1,21 @@
 Rails.application.routes.draw do
-  root 'home#index'
+root 'home#index'
+get '/auth/:provider/callback' => 'authentications#create'
+resources :authentications
 
-  get 'auth/:provider/callback', to: 'sessions#create'
-  get 'auth/failure', to: redirect('/')
-  get '/users/sign_out', to: 'sessions#destroy', as: 'signout'
-# match '/auth/:provider/callback' => 'authentications#create'
-# devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
-devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  # get 'auth/:provider/callback', to: 'sessions#create'
+get 'auth/failure', to: redirect('/')
+devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations", omniauth_callbacks: "users/omniauth_callbacks" }
+devise_scope :user do
+  get 'signout', :to => 'devise/sessions#destroy'
+end
+resources :users
+resources :reviews
+resources :places
+resources :destinations
 
-  resources :reviews
-  resources :places
-  resources :destinations
-devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
+
+
 
   get 'destination/:id' => 'destinations#show'
   get 'destination' => 'destinations#index'

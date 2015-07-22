@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
 def after_sign_in_path_for(resource_or_scope)
-    if resource.sign_in_count == 1
-      root_path
+    if current_user
+      user_path(current_user)
     else
        new_user_session_path
     end
@@ -14,9 +14,9 @@ end
 
 private
 
-def current_user
-  @current_user ||= User.find(session[:user_id]) if session[:user_id]
-end
-helper_method :current_user
+# def current_user
+#   @current_user ||= User.find(session[:user_id]) if session[:user_id]
+# end
+# helper_method :current_user
 
 end

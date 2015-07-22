@@ -8,13 +8,17 @@ body {
 
 footer {
   background-color: #B1B1B1;
+  bottom: 0;
   color: #1D1D1D;
   font-family: sans-serif;
   font-size: 14px;
-
 }
 
-p, ol, ul, td {
+
+p,
+ol,
+ul,
+td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -22,8 +26,8 @@ p, ol, ul, td {
 
 pre {
   background-color: #eee;
-  padding: 10px;
   font-size: 11px;
+  padding: 10px;
 }
 
 .navbar a {
@@ -38,6 +42,43 @@ pre {
     text-decoration: underline;
   }
 }
+
+.placeTitle {
+  font-size: 150%;
+}
+
+.placeAddress {
+  font-size: 106%;
+}
+
+.placeTag {
+  background-color: #00AF74;
+  bottom: 0;
+  color: #D5EFE6;
+  display: inline-block;
+  font-size: 150%;
+  height: 10px;
+  padding: 3px;
+  position: relative;
+  right: 29px;
+  width: 50px;
+  z-index: 100;
+}
+
+.userPhoto {
+  display: inline-block;
+  height: 18px;
+  position: relative;
+  right: 29px;
+  top: 3px;
+  width: 18px;
+  z-index: 100;
+ }
+
+.reviewText {
+  font-style: italic;
+}
+
 
 a {
   color: #000;
@@ -58,32 +99,35 @@ div {
 }
 
 #menu {
-  font-size: 48px;
   color: #B1B1B1;
+  font-size: 48px;
   position: relative;
   top: -3px;
 }
 
 #notice {
-  color: green;
+  color: #0f0;
 }
 
 #logo {
   background-color: #41A151;
-  display: inline-block;
-  margin-left: 40px;
-  width: 40px;
-  height: 40px;
   border-radius: 20px;
+  display: inline-block;
+  height: 40px;
+  margin-left: 40px;
+  top: -5px;
+  width: 40px;
+  z-index: 100;
 }
 
+
 h1 {
-  display: inline-block;
   color: #41A151;
+  display: inline-block;
   font-size: 20px;
+  left: 4px;
   position: relative;
   top: -10px;
-  left: 4px;
 }
 
 .field_with_errors {
@@ -93,22 +137,22 @@ h1 {
 }
 
 #error_explanation {
-  width: 450px;
+  background-color: #f0f0f0;
   border: 2px solid red;
+  margin-bottom: 20px;
   padding: 7px;
   padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+  width: 450px;
 
   h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px;
-    margin-bottom: 0px;
     background-color: #c00;
     color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    margin: -7px;
+    margin-bottom: 0;
+    padding: 5px 5px 5px 15px;
+    text-align: left;
   }
 
   ul li {
@@ -116,3 +160,4 @@ h1 {
     list-style: square;
   }
 }
+

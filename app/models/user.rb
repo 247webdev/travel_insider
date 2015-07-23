@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :reviews
   has_many :places
-  
+
  # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :authentications
@@ -35,6 +35,9 @@ def friends
   facebook.get_object("me/friends")
 end
 
+# def location
+#   facebook.get_object("me?fields=location")["location"]["name"]
+# end
 
 
 

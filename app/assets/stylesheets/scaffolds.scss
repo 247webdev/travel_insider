@@ -1,9 +1,12 @@
 body {
+  width: 640px;
   background-color: #fff;
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  /*font-family: verdana, arial, helvetica, sans-serif;*/
+
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 53px;
 }
 
 footer {
@@ -12,14 +15,26 @@ footer {
   color: #1D1D1D;
   font-family: sans-serif;
   font-size: 14px;
+
+  height: 89px;
+  width: 640px;
 }
 
+/* Text style for "Footer info" */
+.footer-info {
+  width: 560px;
+  height: 36px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 35px;
+}
 
 p,
 ol,
 ul,
 td {
-  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
@@ -109,25 +124,12 @@ div {
   color: #0f0;
 }
 
-#logo {
-  background-color: #41A151;
-  border-radius: 20px;
-  display: inline-block;
-  height: 40px;
-  margin-left: 40px;
-  top: -5px;
-  width: 40px;
-  z-index: 100;
-}
-
 
 h1 {
-  color: #41A151;
   display: inline-block;
-  font-size: 20px;
   left: 4px;
   position: relative;
-  top: -10px;
+  top: -20px;
 }
 
 .field_with_errors {
@@ -161,3 +163,363 @@ h1 {
   }
 }
 
+/*
+======================================================
+*/
+
+/* for landing */
+/* Header */
+
+#header .container {
+  padding-left: 0px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* Style for "Header bg" */
+#landing .header-bg {
+  width: 640px;
+  height: 88px;
+  background-color: white;
+  box-shadow: 0 4px 0 #c3c8cd;
+}
+
+/* Style for "Logo" */
+#logo {
+  width: 68px;
+  height: 68px;
+  background-color: #50d2c2;
+
+  border-radius: 34px;
+  display: inline-block;
+  margin-left: 40px;
+  top: -5px;
+  z-index: 100;
+}
+
+/* Text style for "Name" */
+#header-name {
+  width: 440px;
+  height: 53px;
+  color: #50e3c2;
+  font-size: 36px;
+  font-family: Muli;
+  /*font-weight: 600;*/
+  line-height: 53px;
+}
+
+/* Content */
+
+/* Style for "Image overlay" */
+/*what's this?*/
+#landing .image-overlay {
+  width: 640px;
+  height: 1142px;
+  opacity: 0.1;
+  background-color: #b574f5;
+}
+
+/*what's this?*/
+/* Style for "Image mask" */
+#landing .image-mask {
+  width: 640px;
+  height: 1463px;
+  background-color: black;
+}
+
+
+/* Style for "Headline bg" */
+#landing #jumbo-image {
+  background-image: url("landing_bg.jpg");
+  opacity: 0.5;
+  width: 640px;
+  height: 1142px;
+  padding-top: 68px;
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 640px;
+}
+
+/* jumbo image */
+#landing .headline {
+  margin: 0 auto;
+  width: 560px;
+  height: 161px;
+  background-color: rgba(74, 73, 74, 0.5);
+}
+
+/* Text style for "Headline" */
+#landing .headline span {
+  height: 142px;
+  color: white;
+  font-family: Muli;
+  font-size: 40px;
+  /*font-weight: 100;*/
+  line-height: 71px;
+}
+
+// FB login button
+/* Style for "login-bg" */
+#landing .login-bg {
+  background-color: #507cc0;
+  border-radius: 8px;
+  height: 127px;
+  margin: 280px auto;
+  width: 560px;
+}
+
+/* #fb-login */
+#landing .fb-group {
+  position: relative;
+  left: 35px;
+}
+
+/* Style for "F" */
+#landing .fa-facebook {
+  color: #fff;
+  font-size: 180%;
+  position: relative;
+  top: 34px;
+}
+
+
+/* Text style for "Log in" */
+#landing .login-text {
+  width: 309px;
+  height: 43px;
+  color: #fff;
+  font-family: Muli;
+  /*font-family: "Source Sans Pro";*/
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 43px;
+  position: relative;
+  top: 22px;
+  left: 60px;
+}
+
+/* Text style for "About us" */
+#landing .about-us {
+  width: 560px;
+  height: 35px;
+  color: white;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 35px;
+}
+
+/* Text style for "FAQ title" */
+#landing .faq-title{
+  width: 560px;
+  height: 35px;
+  color: white;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+/* Text style for "FAQ" */
+#landing .faq {
+  width: 560px;
+  height: 104px;
+  color: white;
+  font-family: Muli;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 26px;
+}
+
+/* Text style for "FAQ end" */
+#landing .faq-end {
+  width: 560px;
+  height: 30px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+/* Style for "FAQ bg" */
+#landing .faq-bg {
+  width: 640px;
+  height: 637px;
+  background-color: #4a4a4a;
+  border-radius: 2px;
+}
+
+
+/* for reviews */
+/* Header */
+
+/* Text style for "Post a review" */
+#reviews .post-a-review {
+  width: 440px;
+  height: 53px;
+  color: white;
+  font-family: Muli;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 53px;
+}
+
+/* Style for "Post button" */
+#reviews .post-button {
+  width: 440px;
+  height: 70px;
+  background-color: #50d2c2;
+}
+
+/* Style for "Menu icon" */
+#reviews .menu-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #cbcbcb;
+}
+
+/* Content */
+
+/* Text style for "Post your review title" */
+#reviews .post-your-review-title {
+  width: 560px;
+  height: 44px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 44px;
+}
+
+/* Text style for "Place name" */
+#reviews .place-name {
+  width: 560px;
+  height: 35px;
+  color: #4a4a4a;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+/* Style for "Place bg" */
+#reviews .place-bg {
+  width: 560px;
+  height: 60px;
+  background-color: white;
+}
+
+/* Text style for "Place address" */
+#reviews .place-address {
+  width: 560px;
+  height: 35px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+/* Style for "Address bg" */
+#reviews .address-bg {
+  width: 560px;
+  height: 60px;
+  background-color: white;
+}
+
+/* Text style for "Tag" */
+#reviews .tag {
+  width: 70px;
+  height: 35px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+/* Text style for "Tag name" */
+#reviews .tag-name {
+  width: 110px;
+  height: 35px;
+  color: white;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 35px;
+}
+
+/* Style for "Tag bg" */
+#reviews .tag-bg {
+  width: 110px;
+  height: 35px;
+  background-color: #50d2c2;
+}
+
+/* Text style for "Rating" */
+#reviews .rating {
+  width: 144px;
+  height: 35px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+/* Style for "Star" */
+#reviews .star {
+  width: 36px;
+  height: 36px;
+  background-color: #d8d8d8;
+  border: 1px solid #979797;
+}
+
+/* Color for Star selected: #F8E71C */
+
+/* Text style for "Your review:" */
+#reviews .your-review {
+  width: 144px;
+  height: 35px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+/* Text style for "Write your review" */
+#reviews .write-your-review {
+  width: 560px;
+  height: 35px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 35px;
+}
+
+/* Style for "Review bg" */
+#reviews .review-bg {
+  width: 560px;
+  height: 400px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+/* Text style for "Post your review now" */
+#reviews .post-your-review-now {
+  width: 560px;
+  height: 53px;
+  color: white;
+  font-family: Muli;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 53px;
+}
+
+/* Style for "Post now bg" */
+#reviews .post-now-bg {
+  width: 560px;
+  height: 70px;
+  background-color: #50d2c2;
+}

@@ -1,12 +1,10 @@
 body {
-  width: 640px;
   background-color: #fff;
   color: #333;
-  /*font-family: verdana, arial, helvetica, sans-serif;*/
-
   font-size: 36px;
   font-weight: 600;
   line-height: 53px;
+  width: 640px;
 }
 
 footer {
@@ -20,15 +18,22 @@ footer {
   width: 640px;
 }
 
+footer .container {
+  margin: 0 auto;
+  width: 640px;
+  text-align: center;
+  padding-top: 40px;
+}
+
 /* Text style for "Footer info" */
 .footer-info {
-  width: 560px;
-  height: 36px;
   color: #4a4a4a;
   font-family: Muli;
   font-size: 24px;
   font-weight: 600;
+  height: 36px;
   line-height: 35px;
+  width: 560px;
 }
 
 p,
@@ -58,15 +63,15 @@ pre {
   }
 }
 
-.placeTitle {
+.place-title {
   font-size: 150%;
 }
 
-.placeAddress {
+.place-address {
   font-size: 106%;
 }
 
-.placeTag {
+.place-tag {
   background-color: #00AF74;
   bottom: 0;
   color: #D5EFE6;
@@ -80,7 +85,7 @@ pre {
   z-index: 100;
 }
 
-.userPhoto {
+.user-photo {
   display: inline-block;
   height: 18px;
   position: relative;
@@ -90,7 +95,7 @@ pre {
   z-index: 100;
  }
 
-.reviewText {
+.review-text {
   font-style: italic;
 }
 
@@ -108,7 +113,8 @@ a {
 }
 
 div {
-  &.field, &.actions {
+  &.field,
+  &.actions {
     margin-bottom: 10px;
   }
 }
@@ -170,10 +176,10 @@ h1 {
 /* for landing */
 /* Header */
 
-#header .container {
-  padding-left: 0px;
-  padding-bottom: 0;
-  margin-bottom: 0;
+#header,
+.container {
+  margin: 0;
+  padding: 0;
 }
 
 /* Style for "Header bg" */
@@ -182,6 +188,7 @@ h1 {
   height: 88px;
   background-color: white;
   box-shadow: 0 4px 0 #c3c8cd;
+  padding: 5px 0 0 0;
 }
 
 /* Style for "Logo" */
@@ -192,14 +199,13 @@ h1 {
 
   border-radius: 34px;
   display: inline-block;
-  margin-left: 40px;
+  margin-left: 140px;
   top: -5px;
   z-index: 100;
 }
 
 /* Text style for "Name" */
 #header-name {
-  width: 440px;
   height: 53px;
   color: #50e3c2;
   font-size: 36px;
@@ -209,9 +215,11 @@ h1 {
 }
 
 /* Content */
+#content a:hover {
+  text-decoration: none;
+}
 
 /* Style for "Image overlay" */
-/*what's this?*/
 #landing .image-overlay {
   width: 640px;
   height: 1142px;
@@ -219,7 +227,6 @@ h1 {
   background-color: #b574f5;
 }
 
-/*what's this?*/
 /* Style for "Image mask" */
 #landing .image-mask {
   width: 640px;
@@ -230,14 +237,15 @@ h1 {
 
 /* Style for "Headline bg" */
 #landing #jumbo-image {
-  background-image: url("landing_bg.jpg");
-  opacity: 0.5;
-  width: 640px;
-  height: 1142px;
-  padding-top: 68px;
-  background-repeat: no-repeat;
+  background-image: url('landing_bg.jpg');
   background-position: left top;
+  background-repeat: no-repeat;
   background-size: 640px;
+  height: 815px;
+  margin: 0;
+  opacity: .5;
+  padding-top: 68px;
+  width: 640px;
 }
 
 /* jumbo image */
@@ -246,6 +254,7 @@ h1 {
   width: 560px;
   height: 161px;
   background-color: rgba(74, 73, 74, 0.5);
+  padding-top: 10px;
 }
 
 /* Text style for "Headline" */
@@ -253,7 +262,7 @@ h1 {
   height: 142px;
   color: white;
   font-family: Muli;
-  font-size: 40px;
+  font-size: 42px;
   /*font-weight: 100;*/
   line-height: 71px;
 }
@@ -298,34 +307,33 @@ h1 {
   left: 60px;
 }
 
+// About Us
+/* Style for "FAQ bg" */
+#landing .faq-bg {
+  background-color: #4a4a4a;
+  color: #fff;
+  font-family: Muli;
+  height: 700px;
+  padding: 10px 20px 50px;
+  width: 640px;
+}
+
 /* Text style for "About us" */
 #landing .about-us {
-  width: 560px;
-  height: 35px;
-  color: white;
-  font-family: Muli;
   font-size: 24px;
   font-weight: 600;
-  line-height: 35px;
 }
 
 /* Text style for "FAQ title" */
 #landing .faq-title{
-  width: 560px;
-  height: 35px;
-  color: white;
-  font-family: Muli;
   font-size: 24px;
   font-weight: 300;
   line-height: 35px;
+  margin-top: 2em;
 }
 
 /* Text style for "FAQ" */
 #landing .faq {
-  width: 560px;
-  height: 104px;
-  color: white;
-  font-family: Muli;
   font-size: 18px;
   font-weight: 300;
   line-height: 26px;
@@ -333,21 +341,13 @@ h1 {
 
 /* Text style for "FAQ end" */
 #landing .faq-end {
-  width: 560px;
-  height: 30px;
-  color: white;
   font-size: 20px;
   font-weight: 600;
   line-height: 30px;
+  margin-left: 80px;
+  margin-top: 2em;
 }
 
-/* Style for "FAQ bg" */
-#landing .faq-bg {
-  width: 640px;
-  height: 637px;
-  background-color: #4a4a4a;
-  border-radius: 2px;
-}
 
 
 /* for reviews */

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722000423) do
+ActiveRecord::Schema.define(version: 20150722222849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150722000423) do
     t.string   "destination"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "image"
   end
 
   create_table "places", force: :cascade do |t|
@@ -46,7 +47,16 @@ ActiveRecord::Schema.define(version: 20150722000423) do
     t.string   "zip"
     t.string   "country"
     t.integer  "user_id"
+    t.string   "neighborhood"
   end
+
+  create_table "places_reviews", id: false, force: :cascade do |t|
+    t.integer "review_id", null: false
+    t.integer "place_id",  null: false
+  end
+
+  add_index "places_reviews", ["place_id"], name: "index_places_reviews_on_place_id", using: :btree
+  add_index "places_reviews", ["review_id"], name: "index_places_reviews_on_review_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "stars"
@@ -55,6 +65,16 @@ ActiveRecord::Schema.define(version: 20150722000423) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
   end
+
+  create_table "reviews_places", force: :cascade do |t|
+    t.integer  "place_id"
+    t.integer  "review_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "reviews_places", ["place_id"], name: "index_reviews_places_on_place_id", using: :btree
+  add_index "reviews_places", ["review_id"], name: "index_reviews_places_on_review_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -86,4 +106,6 @@ ActiveRecord::Schema.define(version: 20150722000423) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "reviews_places", "places"
+  add_foreign_key "reviews_places", "reviews"
 end

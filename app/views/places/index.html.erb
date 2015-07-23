@@ -20,9 +20,7 @@
         <td><%= place.address %></td>
         <td><%= place.photo %></td>
         <td><%= place.tag %></td>
-        <td><%= link_to 'Show', place %></td>
-        <td><%= link_to 'Edit', edit_place_path(place) %></td>
-        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', destination_place_path(place.destination, place) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,4 +29,4 @@
 <br>
 
 <%= link_to 'Home', root_path %>
-<%= link_to 'New Place', new_place_path %>
+<%= link_to 'New Place', new_destination_place_path %>

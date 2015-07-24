@@ -15,7 +15,9 @@
         <span>Let your friends take you<br>to your next discovery</span>
       </div>
 
-      <a href=<%= user_omniauth_authorize_path(:facebook) %> target="_self">
+
+      <a href= <%= user_omniauth_authorize_path(:facebook)%> > <!-- this tag need to be the link to login with facebook -->
+
         <div class="login-bg">
           <div class="fb-group">
             <span class="fa fa-facebook"></span>

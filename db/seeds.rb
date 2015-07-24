@@ -27,7 +27,6 @@ p17 = Place.create(name: "Vesuvio Cafe", address: "255 Columbus Ave", tag: "Drin
 p18 = Place.create(name: "Mikkeller Bar", address: "34 Mason St", tag: "Drink", destination_id: 1, city: "San Francisco", state: "CA", zip: "94102", country: "USA", neighborhood: "")
 p19 = Place.create(name: "Irish Times", address: "500 Sacramento St", tag: "Drink", destination_id: 1, city: "San Francisco", state: "CA", zip: "94111", country: "USA", neighborhood: "")
 
-
 d2.places << p1
 d2.places << p2
 d2.places << p3

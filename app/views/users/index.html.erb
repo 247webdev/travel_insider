@@ -9,10 +9,11 @@ Welcome! <%= current_user.name %>
 <br>
 <% current_user.friends.each do |friend| %>
 <% user_friend = User.find_by_uid(friend["id"]) %>
+<% if user_friend != nil %>
 <h1><%= link_to "#{friend["name"]}", user_path(user_friend) %></h1>
 <br>
 <img src=<%= user_friend.image %> alt="">
-
+<% end %>
 <% end %>
 
 <!-- underneath will be current_user's reviews -->

@@ -6,6 +6,6 @@ class Place < ActiveRecord::Base
 #  validates_presence_of :tag
 # validates_inclusion_of :tag, in: ['eat','drink','sleep','do']
 
-  has_many :reviews, :through => :reviews_places
-  has_many :reviews_places
+  has_many :reviews, :as => :reviewable
+  # has_many :reviews_places
 end

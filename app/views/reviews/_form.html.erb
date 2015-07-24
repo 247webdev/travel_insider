@@ -1,26 +1,19 @@
-<%= form_for(@review) do |f| %>
-  <% if @review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+<%= form_for [@place, Review.new] do |f| %>
 
-      <ul>
-      <% @review.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field rating">
-    <%= f.label :rating %><br>
-    <span class="starRating" id="star1">&#9734;</span><span class="starRating" id="star2">&#9734;</span><span class="starRating" id="star3">&#9734;</span><span class="starRating" id="star4">&#9734;</span><span class="starRating" id="star5">&#9734;</span>
-    <%= f.number_field :stars %>
-  </div>
   <div class="field">
+ <%= f.radio_button :stars, "1" %> 1  &#9733;
+  <%= f.radio_button :stars, "2" %> 2   &#9733;
+    <%= f.radio_button :stars, "3" %> 3   &#9733;
+      <%= f.radio_button :stars, "4" %> 4   &#9733;
+        <%= f.radio_button :stars, "5" %> 5   &#9733;
+
+  </div>
     <%= f.label :text %><br>
+    <div class="field">
     <%= f.text_field :text %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    <%= f.submit %></div>
 <% end %>
+
+

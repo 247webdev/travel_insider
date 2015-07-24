@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Reviews for a user</h1>
+<h1>Listing Reviews for a Place</h1>
 
 <table>
   <thead>
@@ -18,15 +18,8 @@
   <tbody>
     <% @reviews.each do |review| %>
       <tr>
-        <td><%= review.name %></td>
-        <td><%= review.address %><%= review.city %><%= review.state %><%= review.country %><%= review.zip %></td>
-        <td><%= review.photo %></td>
-        <td><%= review.tag %></td>
         <td><%= review.stars %></td>
         <td><%= review.text %></td>
-        <td><%= link_to 'Show', review %></td>
-        <td><%= link_to 'Edit', edit_review_path(review) %></td>
-        <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +27,7 @@
 
 <br>
 
-<%= link_to 'New Review', new_destination_place_review_path %>
+<%= link_to 'New Review', new_place_review_path %>
+<div class="container" style="margin: 20px">
+  <%= render "reviews/form" %>
+</div>

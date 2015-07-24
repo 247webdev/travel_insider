@@ -1,25 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Destinations</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Destination</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @destinations.each do |destination| %>
-      <tr>
-        <td><%= destination.destination %></td>
-        <td><%= link_to 'Show', destination %></td>
-        <td><%= link_to 'Edit', edit_destination_path(destination) %></td>
-        <td><%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="col-sm-2 col-md-3 thumbnail">
+       <h4><%= link_to destination.destination,destination_path(destination) %></h4>
+
+      </div>
     <% end %>
-  </tbody>
-</table>
+
 
 <br>

@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-<div class="container">
+<div class="row">
+<div class="col-sm-2 col-sm-offset-1">
+
 <h2>Post a Review for a <%= @place.name %></h2>
  <p>Where: <%= @place.address %></p>
   <p>City: <%= @place.city %></p>
@@ -7,6 +9,7 @@
 
 <br>
   <%= render "reviews/form" %>
+</div>
 </div>
 
 

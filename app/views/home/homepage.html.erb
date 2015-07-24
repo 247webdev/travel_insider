@@ -1,0 +1,18 @@
+
+<% current_user.friends.each do |friend| %>
+
+	<% user_friend = User.find_by_uid(friend["id"]) %>
+	<% if user_friend != nil %>
+		<tr>
+			<td><%= user_friend.reviews.first[:text] %></td>
+			<br>
+			<td><%= user_friend.reviews.first[:stars] %></td>
+			<br>
+			<td><%= user_friend.reviews.first.places.name %></td>
+			<br>
+			<td><%= user_friend.reviews.first.user.name %></td>
+		</tr>
+	<% end %>
+	
+
+<% end %>

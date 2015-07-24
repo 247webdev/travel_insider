@@ -3,7 +3,6 @@
   <div class="navbar navbar-static-top hidden-print" id="header">
     <div class="container">
       <div class="navbar-header header-bg">
-        <!-- <span id="menu" class="fa fa-bars"></span> -->
         <span id="logo"></span><h1 id="header-name">Travel Insider</h1>
       </div>
     </div>
@@ -16,7 +15,7 @@
         <span>Let your friends take you<br>to your next discovery</span>
       </div>
 
-      <a href="/users/auth/facebook" target="_self"> <!-- this tag need to be the link to login with facebook -->
+      <a href=<%= user_omniauth_authorize_path(:facebook) %> target="_self">
         <div class="login-bg">
           <div class="fb-group">
             <span class="fa fa-facebook"></span>

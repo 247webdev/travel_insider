@@ -1,19 +1,121 @@
-Welcome! <%= current_user.name %>
+<div id="profile">
 
-<br>
-<img src=<%=current_user.image  %> alt="">
+  <div class="navbar navbar-static-top hidden-print" id="header">
+    <div class="container">
+      <div class="navbar-header header-bg header-group">
+        <span id="menu" class="fa fa-bars"></span>
+        <!-- <span id="logo"></span> -->
+        <h1 id="header-title">Post a review</h1>
+      </div>
+    </div>
+  </div>
 
-<%= current_user.first_name %>
-<!-- <h2><%= current_user.location %></h2>
+
+  <div id="content">
+    <div id="user-profile">
+      <img src=<%= current_user.image  %> alt='<%= current_user.name %>' class="profile-img" >
+      <div class="user-name"><%= current_user.name %></div>
+      <div class="user-location">Lives in <%= current_user.location %>San Francisco, CA United States</div>
+    </div>
+
+    <div class="reviews">
+      <div class="review-header">My reviews:</div>
+
+<!-- start dynamic repeat here for .review-group -->
+<!-- TEST
+< %= @user_reviews.name %>
+TEST -->
+      <% @user_reviews.each do |review| %>
+        <script type="text/javascript">
+          // take the current review's text and slice the first 200 characters then add ... if the text was longer
+          // add dbl quotes to front and end
+          // use that variable as the output
+        </script>
+        <div class="review-group">
+          \/\/\/\ inside each do \/\/\/\
+<!--
+          < % link_to whatever the view a single review path is(review) do %>
+            < %= review.title, :class => 'review-title' %>
+            < %= review.tag, :class => 'review-tag' %>
+            < %= review.stars, :class => 'review-stars' %>
+            < %= review.location, :class => 'review-location' %>
+            < %= review.text, :class => 'review-text' %>
+          < % end %>
+"places"
+name    tag "reviews".stars
+address, city, state ...
+"reviews".text
+
+created_at
+destination_id
+
  -->
+
+        </div> <!-- end .review-group -->
+      <% end %>
+
+<!-- end dynamic repeat here for .review-group -->
+
+        <div class="review-group">
+
+          <div class="no-break">
+            <span class="review-title">titletitletitletitletitletitletitle</span>
+            <span class="review-tag">tag</span>
+            <span class="review-stars">stars/5</span>
+          </div>
+          <div class="review-location">location</div>
+          <div class="review-text">"text text text text text text text text text text text text text text text..."</div>
+
+        </div>
+
+        <div class="review-group">
+
+          <div class="no-break">
+            <span class="review-title">titletitletitletitletitletitletitle</span>
+            <span class="review-tag">tag</span>
+            <span class="review-stars">stars/5</span>
+          </div>
+          <div class="review-location">location</div>
+          <div class="review-text">"text text text text text text text text text text text text text text text..."</div>
+
+        </div>
+
+        <div class="review-group">
+
+          <div class="no-break">
+            <span class="review-title">titletitletitletitletitletitletitle</span>
+            <span class="review-tag">tag</span>
+            <span class="review-stars">stars/5</span>
+          </div>
+          <div class="review-location">location</div>
+          <div class="review-text">"text text text text text text text text text text text text text text text..."</div>
+
+        </div>
+
+        <br>
+
+<!-- make this block conditional if there are more than 10 reviews -->
+        <div class="reviews-pagination"><!-- < % will_paginate @user_reviews %> --></div>
+<!-- end pagination block -->
+
+    </div><!-- end .reviews -->
+
+  </div><!-- end #content -->
+
+  <footer>
+    <div class="container">Footer Info</div>
+  </footer>
+
+
 <br>
 <% current_user.friends.each do |friend| %>
 <% user_friend = User.find_by_uid(friend["id"]) %>
 <% if user_friend != nil %>
 <h1><%= link_to "#{friend["name"]}", user_path(user_friend) %></h1>
-<br>
 <img src=<%= user_friend.image %> alt="">
+<br>
 <% end %>
 <% end %>
 
-<!-- underneath will be current_user's reviews -->
+
+</div>

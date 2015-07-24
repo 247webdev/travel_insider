@@ -11,8 +11,8 @@ class DestinationsController < ApplicationController
   # GET /destinations/1
   # GET /destinations/1.json
   def show
-    @destination = Destination.where( destination: "some destination") #  replace with the user's given search of destination
-    @reviews = @destination.reviews
+    @destination = Destination.find(params[:id]) #  replace with the user's given search of destination
+    @places = @destination.places
   end
 
   # GET /destinations/new

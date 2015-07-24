@@ -1,10 +1,23 @@
 <p id="notice"><%= notice %></p>
+<h1><%= @destination.destination %>!</h1>
 
-<p>
-  <strong>Destination:</strong>
-  <%= @destination.destination %>
-</p>
+<% @destination.places.each do |place| %>
+<div class="col-sm-2 col-md-3 thumbnail">
+  <h3><%= link_to place.name, destination_place_path(place.destination, place) %>
+</h3>
+  <p><%= place.address %></p>
+  <p><%= place.city %></p>
+  <p><%= place.tag %></p>
+  <br>
+  <% if place.reviews.any? %>
+  <p><%= place.reviews.first.text  %></p>
+  <p><%= place.reviews.first.stars%> &#9733;</p>
+    <p>by: <%= place.reviews.first.user.name  %></p>
+<% end %>
+</div>
+<% end %>
+
 
 <%= link_to 'Home', root_path %>
-<%= link_to 'Edit', edit_destination_path(@destination) %> |
+<br>
 <%= link_to 'Back', destinations_path %>

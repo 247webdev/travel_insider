@@ -4,6 +4,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def index
+    # get the current user's reviews and pass to the index erb file
+    @user_reviews = current_user.reviews
+    # @user_reviews = current_user.reviews.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show

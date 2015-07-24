@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 root 'home#index'
+
+get '/homepage', to: 'home#homepage', as: 'homepage'
+
 get '/auth/:provider/callback' => 'authentications#create'
 
   # get 'auth/:provider/callback', to: 'sessions#create'

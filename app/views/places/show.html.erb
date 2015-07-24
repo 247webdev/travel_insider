@@ -11,21 +11,18 @@
 </p>
 
 <p>
-  <strong>Photo:</strong>
-  <%= @place.photo %>
-</p>
-
-<p>
   <strong>Tag:</strong>
   <%= @place.tag %>
 </p>
 
 <h1>Reviews for <%= @place.name %></h1>
 <% @place.reviews.each do |review| %>
+<div class="col-sm-2 col-md-3 thumbnail">
 <p><%= review.user.name %></p>
 <p><%= review[:text] %></p>
 <p><%= review[:stars] %></p>
-
-<% end %>
 </div>
-<%= link_to 'Home', root_path %>
+<% end %>
+
+</div>
+<%= link_to "Post a Review for #{@place.name}", place_reviews_path(@place) %>

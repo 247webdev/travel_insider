@@ -31,6 +31,8 @@ gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 gem "figaro"
 gem "koala", "~> 2.0"
+# Pagination https://hackhands.com/pagination-rails-will_paginate-gem/
+gem 'will_paginate'
 
 # for web app icons
 gem 'font-awesome-rails'

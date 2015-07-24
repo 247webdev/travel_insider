@@ -123,7 +123,8 @@ div {
   color: #B1B1B1;
   font-size: 48px;
   position: relative;
-  top: -3px;
+  left: -40px;
+  top: 3px;
 }
 
 #notice {
@@ -220,15 +221,15 @@ h1 {
 }
 
 /* Style for "Image overlay" */
-#landing .image-overlay {
+#landing .image-overlay1 {
   width: 640px;
   height: 1142px;
-  opacity: 0.1;
+  /*opacity: 0.1;*/
   background-color: #b574f5;
 }
 
 /* Style for "Image mask" */
-#landing .image-mask {
+#landing .image-mask1 {
   width: 640px;
   height: 1463px;
   background-color: black;
@@ -243,7 +244,7 @@ h1 {
   background-size: 640px;
   height: 815px;
   margin: 0;
-  opacity: .5;
+  opacity: 1;
   padding-top: 68px;
   width: 640px;
 }
@@ -255,6 +256,7 @@ h1 {
   height: 161px;
   background-color: rgba(74, 73, 74, 0.5);
   padding-top: 10px;
+  text-align: center;
 }
 
 /* Text style for "Headline" */
@@ -348,13 +350,138 @@ h1 {
   margin-top: 2em;
 }
 
+/*
+  ========for profile page==============
+*/
+// Header
+
+#profile,
+#header,
+#content,
+footer {
+  width: 640px;
+}
+
+#profile a:link,
+#profile a:hover {
+  text-decoration: none;
+}
+
+.header-group {
+  display: block;
+  padding: 3px;
+  text-align: center;
+  width: 640px;
+  background-color: white;
+  box-shadow: 0 4px 0 #c3c8cd;
+  padding: 5px 0 0 0;
+}
+
+#header-title {
+  height: 53px;
+  color: #fff;
+  background-color: #50e3c2;
+  font-size: 36px;
+  font-family: Muli;
+  /*font-weight: 600;*/
+  line-height: 53px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+  top: 0px;
+}
 
 
-/* for reviews */
-/* Header */
+// profile info
+/* Content */
+#user-profile {
+  margin: 20px;
+  text-align: center;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  border-radius: 60px;
+}
+
+.user-name {
+  color: #2C2C2C;
+  font-size: 23px;
+  line-height: 30px;
+}
+
+.user-location {
+  color: #2C2C2C;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 30px;
+}
+
+.review-header {
+  margin-top: 20px;
+  margin-left: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.review-group {
+  margin-top: 30px;
+  background-color: #E2E2E2;
+  padding: 0px 13px 3px 50px;
+  font-family: Muli;
+}
+
+.no-break {
+  overflow: hidden;
+  width: 540px;
+  padding: 0;
+  margin: 0;
+
+  /*background-color: #CD127F;*/
+}
+
+.review-title {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 8px;
+  z-index: 100;
+}
+
+.review-tag {
+  background-color: #878787;
+  color: #fff;
+  padding: 0 40px;
+  z-index: 200;
+}
+
+.review-stars {
+  font-size: 70%;
+  z-index: 200;
+}
+
+.review-location {
+  display: block;
+  font-size: 70%;
+  position: relative;
+  top: -20px;
+}
+
+.review-text {
+  display: block;
+  font-size: 70%;
+  position: relative;
+  top: -10px;
+  line-height: 25px;
+}
+
+.reviews-pagination {
+  margin: 5px 0 30px 0;
+}
 
 /* Text style for "Post a review" */
-#reviews .post-a-review {
+#post-review .post-a-review {
   width: 440px;
   height: 53px;
   color: white;
@@ -365,14 +492,14 @@ h1 {
 }
 
 /* Style for "Post button" */
-#reviews .post-button {
+#post-review .post-button {
   width: 440px;
   height: 70px;
   background-color: #50d2c2;
 }
 
 /* Style for "Menu icon" */
-#reviews .menu-icon {
+#post-review .menu-icon {
   width: 50px;
   height: 50px;
   background-color: #cbcbcb;
@@ -381,7 +508,7 @@ h1 {
 /* Content */
 
 /* Text style for "Post your review title" */
-#reviews .post-your-review-title {
+#post-review .post-your-review-title {
   width: 560px;
   height: 44px;
   color: #4a4a4a;
@@ -392,7 +519,7 @@ h1 {
 }
 
 /* Text style for "Place name" */
-#reviews .place-name {
+#post-review .place-name {
   width: 560px;
   height: 35px;
   color: #4a4a4a;
@@ -402,14 +529,14 @@ h1 {
 }
 
 /* Style for "Place bg" */
-#reviews .place-bg {
+#post-review .place-bg {
   width: 560px;
   height: 60px;
   background-color: white;
 }
 
 /* Text style for "Place address" */
-#reviews .place-address {
+#post-review .place-address {
   width: 560px;
   height: 35px;
   color: #4a4a4a;
@@ -420,14 +547,14 @@ h1 {
 }
 
 /* Style for "Address bg" */
-#reviews .address-bg {
+#post-review .address-bg {
   width: 560px;
   height: 60px;
   background-color: white;
 }
 
 /* Text style for "Tag" */
-#reviews .tag {
+#post-review .tag {
   width: 70px;
   height: 35px;
   color: #4a4a4a;
@@ -438,7 +565,7 @@ h1 {
 }
 
 /* Text style for "Tag name" */
-#reviews .tag-name {
+#post-review .tag-name {
   width: 110px;
   height: 35px;
   color: white;
@@ -449,14 +576,14 @@ h1 {
 }
 
 /* Style for "Tag bg" */
-#reviews .tag-bg {
+#post-review .tag-bg {
   width: 110px;
   height: 35px;
   background-color: #50d2c2;
 }
 
 /* Text style for "Rating" */
-#reviews .rating {
+#post-review .rating {
   width: 144px;
   height: 35px;
   color: #4a4a4a;
@@ -467,7 +594,7 @@ h1 {
 }
 
 /* Style for "Star" */
-#reviews .star {
+#post-review .star {
   width: 36px;
   height: 36px;
   background-color: #d8d8d8;
@@ -477,7 +604,7 @@ h1 {
 /* Color for Star selected: #F8E71C */
 
 /* Text style for "Your review:" */
-#reviews .your-review {
+#post-review .your-review {
   width: 144px;
   height: 35px;
   color: #4a4a4a;
@@ -488,7 +615,7 @@ h1 {
 }
 
 /* Text style for "Write your review" */
-#reviews .write-your-review {
+#post-review .write-your-review {
   width: 560px;
   height: 35px;
   color: #4a4a4a;
@@ -499,7 +626,7 @@ h1 {
 }
 
 /* Style for "Review bg" */
-#reviews .review-bg {
+#post-review .review-bg {
   width: 560px;
   height: 400px;
   background-color: white;
@@ -507,7 +634,7 @@ h1 {
 }
 
 /* Text style for "Post your review now" */
-#reviews .post-your-review-now {
+#post-review .post-your-review-now {
   width: 560px;
   height: 53px;
   color: white;
@@ -518,7 +645,7 @@ h1 {
 }
 
 /* Style for "Post now bg" */
-#reviews .post-now-bg {
+#post-review .post-now-bg {
   width: 560px;
   height: 70px;
   background-color: #50d2c2;

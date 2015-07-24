@@ -50,14 +50,6 @@ ActiveRecord::Schema.define(version: 20150722222849) do
     t.string   "neighborhood"
   end
 
-  create_table "places_reviews", id: false, force: :cascade do |t|
-    t.integer "review_id", null: false
-    t.integer "place_id",  null: false
-  end
-
-  add_index "places_reviews", ["place_id"], name: "index_places_reviews_on_place_id", using: :btree
-  add_index "places_reviews", ["review_id"], name: "index_places_reviews_on_review_id", using: :btree
-
   create_table "reviews", force: :cascade do |t|
     t.integer  "stars"
     t.string   "text"

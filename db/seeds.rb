@@ -27,6 +27,11 @@ p17 = Place.create(name: "Vesuvio Cafe", address: "255 Columbus Ave", tag: "Drin
 p18 = Place.create(name: "Mikkeller Bar", address: "34 Mason St", tag: "Drink", destination_id: 1, city: "San Francisco", state: "CA", zip: "94102", country: "USA", neighborhood: "")
 p19 = Place.create(name: "Irish Times", address: "500 Sacramento St", tag: "Drink", destination_id: 1, city: "San Francisco", state: "CA", zip: "94111", country: "USA", neighborhood: "")
 
+r1 = Review.create(stars: "4", text: "eat it up", user_id: "1")
+r2 = Review.create(stars: "2", text: "gobble gobble", user_id: "1")
+
+p1.reviews << r1
+p2.reviews << r2
 
 d2.places << p1
 d2.places << p2

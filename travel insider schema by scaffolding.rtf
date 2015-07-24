@@ -113,4 +113,16 @@ Review.find(user_id).order(created_date:).limit(10)    or is it :created_date??\
   </div>\
   <div class="actions">\
     <%= f.submit %>\
-  </div>}
+  </div>\
+====================\
+this is the dynamic loop to list the user's networked friends\
+      <% current_user.friends.each do |friend| %>\
+        <div class='review-group'>\
+        < % user_friend=User.find_by_uid(friend['id']) %>\
+        <h1><%= link_to "#\{friend["name"]\}", user_path(user_friend) %></h1>\
+        <br>\
+        <img src=<%= user_friend.image %> alt="">\
+      <% end %>\
+====================\
+for slack\
+github repo for the app was transferred to Christine. Why did you want this transferred? It's important to me to hear an honest answer because I don't believe you've gained anything from it other than making me feel marginalized. I feel it's a move only if you don't trust me. I hope to learn that I have overlooked a reason because I believe transferring the repo does not give her anything she didn't already have unless you felt I was going to do something malicious. Even if I did, each of us have a copy on our laptops where she could have created a new repo from. Did you think the app's repo was in danger in my hands?}

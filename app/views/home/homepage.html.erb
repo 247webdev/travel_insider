@@ -1,39 +1,51 @@
 
-<h1>Pick a Location</h1>
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Pick a Location!
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-  <% @destinations.each do |destination| %>
-    <li><%= link_to destination.destination, destination_path(destination) %></li>
-  <% end %>
-
-  </ul>
-</div>
-
-
-<h2>Latest Friend Reviews!</h2>
-
-<% current_user.friends.each do |friend| %>
-  <% user_friend = User.find_by_uid(friend["id"]) %>
-  <% if user_friend != nil %>
-    <tr>
-      <div class="col-sm-2 col-md-3 thumbnail">
-      <h4><%= user_friend[:name]%> </h4>
-         <% if user_friend.reviews.any? %>
-
-      <td><%= user_friend.reviews.first.reviewable.name%> @ <%= user_friend.reviews.first.reviewable.destination[:destination] %></td>
-      <br>
-      <td>"<%= user_friend.reviews.first[:text] %>"</td>
-      <br>
-      <td><%= user_friend.reviews.first[:stars]%> &#9733;</td>
-
-    <% else %>
-    <td></td>
+<div id="jumbo-image">
+  <div id="dropMenu" class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Pick a Location!
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <% @destinations.each do |destination| %>
+      <li><%= link_to destination.destination, destination_path(destination) %></li>
     <% end %>
-  <% end %>
 
+    </ul>
+  </div>
 </div>
-<% end %>
+
+<div class="container-fluid">
+  <h2 id="reviewH2">Latest recommendations from your friends!</h2>
+</div>
+
+<div id="revSection">
+  <% current_user.friends.each do |friend| %>
+    <% user_friend = User.find_by_uid(friend["id"]) %>
+    <% if user_friend != nil %>
+    <div class="homeRw">
+      <tr>
+        
+           <% if user_friend.reviews.any? %>
+        <h4 class="reviewPlace"><%= user_friend.reviews.first.reviewable.name%><div id="reviewRating"><td><%= user_friend.reviews.first[:stars]%> &#9733;</td></div> </h4>
+        <div id="reviewTag"><td><%= user_friend.reviews.first.reviewable.tag %></td></div>
+
+        <div>
+        <td><%= user_friend.reviews.first.reviewable.destination[:destination] %>, <%= user_friend.reviews.first.reviewable.state %></td>
+        </div>
+        <br>
+        <div>
+          <td>"<%= user_friend.reviews.first[:text] %>"</td>
+        </div>
+        <div class="reviewerName">
+          <td>- <%= user_friend.reviews.first.user.name %></td>
+        </div>
+        <br>
+       
+      </tr>
+      
+  </div>
+          <% end %>
+    <% end %>
+
+  <% end %>
+</div>

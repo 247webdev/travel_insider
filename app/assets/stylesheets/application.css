@@ -17,15 +17,18 @@
 
 
 body {
-      font-family: 'Muli', sans-serif;
+          font-family: 'Muli', sans-serif;
           padding-top: 50px;
           position: relative;
+          left: 50%;
+          transform: translate(-50%);
+          background-color: #EDEDED;
       }
-
+      
       pre {
           tab-size: 8;
       }
-
+      
       @media screen and (max-width: 768px) {
           .side-collapse-container{
               width:100%;
@@ -50,12 +53,22 @@ body {
           }
       }
 
- .container {
-  margin: 20px;
- }
-div.thumbnail{
-  width: 50%;
-  margin-top: 20px;
-  margin-left: 20px;
+#navHeader {
+  width: 100%;
 }
 
+.userName {
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 5%;
+}
+
+.profileImgDiv {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.userImg {
+    border-radius: 50%;
+    width: 25%;
+}

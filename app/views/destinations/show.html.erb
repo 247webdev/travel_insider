@@ -1,46 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <div>
-	<% if @destination.destination = "Sydney" %>
-		<img src="sydney_bg.jpg">
-	<% else %>
-		<img src="sanfrancisco_bg.jpg">
-	<% end %>
 	<h1><%= @destination.destination %>!</h1>
+  <img src=<%= @destination.image %> alt="">
 </div>
 
-
-<% @destination.places.each do |place| %>
-<div class="col-sm-2 col-md-3 thumbnail">
-  <h3><%= link_to place.name, destination_place_path(place.destination, place) %>
-</h3>
-  <p><%= place.address %></p>
-  <p><%= place.city %></p>
-  <p><%= place.tag %></p>
-  <br>
-  <tr>
-        
-           <% if @destination.places.reviews.any? %>
-        <h4 class="reviewPlace"><%= @destination.places.reviews.first.reviewable.name%><div id="reviewRating"><td><%= @destination.places.reviews.first[:stars]%> &#9733;</td></div> </h4>
-        <div id="reviewTag"><td><%= @destination.places.reviews.first.reviewable.tag %></td></div>
+<% if @destination.places.any? %>
+<% @destination.places.first(9).each do |place| %>
+  <% if place.reviews.any? %>
+        <h4 class="reviewPlace"><%= place.name%><div id="reviewRating"><td><%= place.reviews.first[:stars]%> &#9733;</td></div> </h4>
+        <div id="reviewTag"><td><%= place.tag %></td></div>
 
         <div>
-        <td><%= @destination.places.reviews.first.reviewable.destination[:destination] %>, <%= @destination.places.reviews.first.reviewable.state %></td>
+        <td><%= place.destination.destination %></td>
         </div>
         <br>
         <div>
-          <td>"<%= @destination.places.reviews.first[:text] %>"</td>
+          <td>"<%= place.reviews.first[:text] %>"</td>
         </div>
         <div class="reviewerName">
-          <td>- <%= @destination.places.reviews.first.user.name %></td>
+          <td>- <%= place.reviews.first.user.name %></td>
         </div>
         <br>
-       
       </tr>
       <% end %>
+       <% end %>
 </div>
 <% end %>
-
 
 <%= link_to 'Home', root_path %>
 <br>

@@ -12,7 +12,7 @@
       <tr>
         
            <% if user_friend.reviews.any? %>
-        <h4 class="reviewPlace"><%= user_friend.reviews.first.reviewable.name%><div id="reviewRating"><td><%= user_friend.reviews.first[:stars]%> &#9733;</td></div> </h4>
+        <h4 class="reviewPlace"><%= user_friend.reviews.first.reviewable.name %><div id="reviewRating"><td><%= user_friend.reviews.first[:stars] %> &#9733;</td></div> </h4>
         <div id="reviewTag"><td><%= user_friend.reviews.first.reviewable.tag %></td></div>
 
         <div>
@@ -21,6 +21,9 @@
         <br>
         <div>
           <td>"<%= user_friend.reviews.first[:text] %>"</td>
+        </div>
+        <div class="reviewerName">
+          <td>- <%= user_friend.reviews.first.user.name %></td>
         </div>
         <br>
        

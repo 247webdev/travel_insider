@@ -39,6 +39,10 @@ body {
     padding-bottom: 1%;
 }
 
+.reviewPost{
+  margin-left: 30px;
+}
+
 #reviewH2 {
 	font-family: 'Muli', sans-serif;
 	font-size: 20px;
@@ -57,13 +61,15 @@ body {
 }
 
 #reviewRating {
-	margin-left: 60%;
-  	margin-top: -3%;
+	margin-left: 80%;
+  margin-top: -3%;
 
 }
 
 .reviewPlace {
 	padding-top: 3%;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 #reviewTag {
@@ -77,6 +83,7 @@ body {
 }
 
 .reviewerName {
-	float: right;
-  	margin-top: -1%;
+  margin-top: -1%;
+  display: inline-block;
+  float: right;
 }

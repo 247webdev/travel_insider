@@ -21,6 +21,10 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
+    @place = Place.find(params[:place_id])
+    @reviewable = find_reviewable
+    @place = Place.find(params[:place_id])
+    @reviews = @place.reviews
     @review = Review.new
   end
 

@@ -8,7 +8,9 @@
 <% if @destination.places.any? %>
 <% @destination.places.first(9).each do |place| %>
   <% if place.reviews.any? %>
-        <h4 class="reviewPlace"><%= place.name%><div id="reviewRating"><td><%= place.reviews.first[:stars]%> &#9733;</td></div> </h4>
+
+    <%= link_to place.name, destination_place_path(place.destination, place), :class => "reviewPlace" %>
+      <td id="reviewRating"><%= place.reviews.first[:stars]%> &#9733;</td>
         <div id="reviewTag"><td><%= place.tag %></td></div>
 
         <div>
@@ -22,10 +24,8 @@
           <td>- <%= place.reviews.first.user.name %></td>
         </div>
         <br>
-      </tr>
-      <% end %>
-       <% end %>
-</div>
+<% end %>
+<% end %>
 <% end %>
 
 <%= link_to 'Home', root_path %>

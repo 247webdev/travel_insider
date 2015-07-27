@@ -1,28 +1,34 @@
-<div class="container">
-<p id="notice"><%= notice %></p>
 
-<p>
-  <%= @place.name %>
-</p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @place.address %>
-</p>
-
-<p>
-  <strong>Tag:</strong>
-  <%= @place.tag %>
-</p>
-
-<h1>Reviews for <%= @place.name %></h1>
-<% @place.reviews.each do |review| %>
-<div class="col-sm-2 col-md-3 thumbnail">
-<p><%= review.user.name %></p>
-<p><%= review[:text] %></p>
-<p><%= review[:stars] %></p>
+<div class="container-fluid">
+  <h2 id="reviewH2">Latest recommendations from your friends!</h2>
 </div>
-<% end %>
 
+<div id="revSection">
+  <% current_user.friends.each do |friend| %>
+    <% user_friend = User.find_by_uid(friend["id"]) %>
+    <% if user_friend != nil %>
+    <div class="homeRw">
+      <tr>
+        
+           <% if user_friend.reviews.any? %>
+        <h4 class="reviewPlace"><%= user_friend.reviews.first.reviewable.name%><div id="reviewRating"><td><%= user_friend.reviews.first[:stars]%> &#9733;</td></div> </h4>
+        <div id="reviewTag"><td><%= user_friend.reviews.first.reviewable.tag %></td></div>
+
+        <div>
+        <td><%= user_friend.reviews.first.reviewable.destination[:destination] %>, <%= user_friend.reviews.first.reviewable.state %></td>
+        </div>
+        <br>
+        <div>
+          <td>"<%= user_friend.reviews.first[:text] %>"</td>
+        </div>
+        <br>
+       
+      </tr>
+      
+  </div>
+          <% end %>
+    <% end %>
+
+  <% end %>
 </div>
-<%= link_to "Post a Review for #{@place.name}", place_reviews_path(@place) %>

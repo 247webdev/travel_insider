@@ -1,7 +1,21 @@
-<h1><%= @user.name %></h1>
+
+<div class="profileImgDiv">
+ <img class="userImg" src="<%= @user.image %>" alt="">
+ <h1 class="userName"><%= @user.name %></h1>
+</div>
 <!-- <h2><%= @user.location %></h2>
  -->
- <img src= <%= @user.image %>
-alt="">
 
 <!-- underneath will be user's reviews -->
+
+<div id="revSection">
+  <% @user.reviews.each do |review| %>
+    <div class="homeRw">
+      <tr>
+      	<%= review.reviewable.first %>
+       
+      </tr>
+      
+  </div>
+    <% end %>
+</div>

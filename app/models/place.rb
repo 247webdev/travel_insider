@@ -7,5 +7,5 @@ class Place < ActiveRecord::Base
 # validates_inclusion_of :tag, in: ['eat','drink','sleep','do']
 
   has_many :reviews, :as => :reviewable
-  # has_many :reviews_places
+  has_many :reviews_places
 end

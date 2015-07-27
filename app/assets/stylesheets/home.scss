@@ -1,3 +1,82 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	background-color: #EDEDED;
+}
+
+/* Text style for "User review" */
+.thumbnail {
+  width: 460px;
+  height: 52px;
+  color: #4a4a4a;
+  font-family: Muli;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 26px;
+}
+
+#jumbo-image {
+	background-image: url('friendshouse_bg.jpg');
+	width: 100%;
+  	position: relative;
+  	background-size: cover;
+  	min-height: 265px;
+}
+
+#dropMenu {
+	position: absolute;
+	top: 40%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.container-fluid {
+	background-color: #EDEDED;
+	margin-bottom: -2%;
+    padding-bottom: 1%;
+}
+
+#reviewH2 {
+	font-family: 'Muli', sans-serif;
+	font-size: 20px;
+}
+
+#revSection {
+	background-color: #EDEDED;
+}
+
+.homeRw {
+	margin: 0 auto;
+    background-color: #DDDDDD;
+    margin-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#reviewRating {
+	margin-left: 60%;
+  	margin-top: -3%;
+
+}
+
+.reviewPlace {
+	padding-top: 3%;
+}
+
+#reviewTag {
+	margin-left: 70%;
+  	margin-top: -5%;
+  	margin-right: 20%;
+  	padding-left: 0.5%;
+  	text-align: center;
+  	background-color: #9B9B9B;
+    color: white;
+}
+
+.reviewerName {
+	float: right;
+  	margin-top: -1%;
+}

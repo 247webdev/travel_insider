@@ -177,9 +177,13 @@ h1 {
 /* for landing */
 /* Header */
 
-#header,
-.container {
+#header .container {
   margin: 0;
+  padding: 0;
+}
+
+div .hidden-print {
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -189,7 +193,6 @@ h1 {
   height: 88px;
   background-color: white;
   box-shadow: 0 4px 0 #c3c8cd;
-  padding: 5px 0 0 0;
 }
 
 /* Style for "Logo" */
@@ -197,7 +200,7 @@ h1 {
   width: 68px;
   height: 68px;
   background-color: #50d2c2;
-
+  margin-top: 2%;
   border-radius: 34px;
   display: inline-block;
   margin-left: 140px;

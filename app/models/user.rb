@@ -35,10 +35,10 @@ def friends
   facebook.get_object("me/friends")
 end
 
-# def location
-#   facebook.get_object("me?fields=location")["location"]["name"]
-# end
-
+def propic
+  profile = facebook.get_object('me')
+  facebook.get_picture(profile['id'], type: :large)
+end
 
 
 

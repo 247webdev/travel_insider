@@ -180,8 +180,7 @@ r18 = Review.create(text:"My favorite brewery in SF. The beer here is so smooooo
 r19 = Review.create(text:"My favorite hangout joint on St.Patricks Day. Man some real fun stuff happens here.", stars: 5, place_id: 19, user_id: 3)
 r20 = Review.create(text:"Love their pizzas.", stars: 5, place_id: 20, user_id: 3)
 r21 = Review.create(text:"Tequila Bar, funky place to start your night; Strongly recommend their tequila shot + antidote and if you are hungry their pulled pork burger (an absolute delish!)", stars: 5, place_id: 21, user_id: 4)
-r22 = Review.create(text:"Great to have a few cocktails and dance on music from the 70's and 80's", stars: 5, place_id: 22, user_id: 4)
-r23 = Review.create(text:"Hard to find but a real Jewel", stars: 5, place_id: 23, user_id: 1)
+r22 = Review.create(text:"Great to have a few cocktails and dance on music from the 70s and 80s", stars: 5, place_id: 22, user_id: 4)
 r24 = Review.create(text:"Great greek food, beautifully decorated plates, bit pricy but worth the money", stars: 5, place_id: 24, user_id: 1)
 r25 = Review.create(text:"Nice cosy terrace, best option for two: bottle of red wine, and one of the Grazin plate with a mix of the chef’s selection.", stars: 5, place_id: 25, user_id: 1)
 r26 = Review.create(text:"Great sydney views with outstanding food, the service is excellent. get the fish of the day.", stars: 5, place_id: 26, user_id: 1)
@@ -235,7 +234,6 @@ p19.reviews << r19
 p20.reviews << r20
 p21.reviews << r21
 p22.reviews << r22
-p23.reviews << r23
 p24.reviews << r24
 p25.reviews << r25
 p26.reviews << r26
@@ -296,7 +294,6 @@ u3.reviews << r19
 u3.reviews << r20
 u4.reviews << r21
 u4.reviews << r22
-u1.reviews << r23
 u1.reviews << r24
 u1.reviews << r25
 u1.reviews << r26

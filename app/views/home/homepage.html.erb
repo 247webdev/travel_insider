@@ -24,9 +24,9 @@
     <% if user_friend != nil %>
     <div class="homeRw">
       <tr>
-        
+
            <% if user_friend.reviews.any? %>
-        <h4 class="reviewPlace"><%= user_friend.reviews.first.reviewable.name%><div id="reviewRating"><td><%= user_friend.reviews.first[:stars]%> &#9733;</td></div> </h4>
+        <h4 class="reviewPlace"><%= link_to user_friend.reviews.first.reviewable.name, destination_place_path(user_friend.reviews.first.reviewable.destination, user_friend.reviews.first.reviewable)%><div id="reviewRating"><td><%= user_friend.reviews.first[:stars]%> &#9733;</td></div> </h4>
         <div id="reviewTag"><td><%= user_friend.reviews.first.reviewable.tag %></td></div>
 
         <div>
@@ -40,9 +40,9 @@
           <td>- <%= user_friend.reviews.first.user.name %></td>
         </div>
         <br>
-       
+
       </tr>
-      
+
   </div>
           <% end %>
     <% end %>

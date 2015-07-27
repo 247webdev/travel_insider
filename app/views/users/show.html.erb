@@ -10,9 +10,10 @@
   <% @user.reviews.first(9).each do |review| %>
     <div class="homeRw">
       <tr>
-
-      	<%= review.reviewable.name %>
-
+      	<td><%= review.reviewable.name %></td>
+        <br>
+        <td>"<%= review.text %></td>""
+         <td><%= review.stars %> &#9733;</td>
       </tr>
   </div>
     <% end %>

@@ -24,11 +24,11 @@ body {
           transform: translate(-50%);
           background-color: #EDEDED;
       }
-      
+
       pre {
           tab-size: 8;
       }
-      
+
       @media screen and (max-width: 768px) {
           .side-collapse-container{
               width:100%;
@@ -61,6 +61,8 @@ body {
     left: 50%;
     transform: translate(-50%);
     margin-top: 5%;
+    display: inherit;
+
 }
 
 .profileImgDiv {
@@ -71,4 +73,5 @@ body {
 .userImg {
     border-radius: 50%;
     width: 25%;
+    display: inline-block;
 }
